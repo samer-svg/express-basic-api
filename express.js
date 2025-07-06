@@ -23,6 +23,16 @@ app.use(logger);
 app.use (express.urlencoded({extended: false}));
 // Middleware to serve static files (like HTML, CSS, images) from the 'public' directory.
 app.use(express.static(path.join(__dirname,'public')));
+// Root route handler
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
+
+// Users page route handler
+app.get('/users', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'users.html'));
+});
+
 // Mount the user router for all routes starting with /api/users.
 app.use('/api/users',router);
 
