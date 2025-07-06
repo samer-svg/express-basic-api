@@ -3,28 +3,73 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home</title>
-  <style>
-    .active {
-      background : red;
-    }
-    .text {
-      text-align:center;
-      color:red
-    }
-  </style>
+  <title>User Management System</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="index.css">
 </head>
 <body>
-  <h1>welcome to the home page</h1>
-  <form class="form">
-    <label>create user name</label>
-    <input required name="name" placeHolder="Name" type="text">
-    <label>create user ID</label>
-    <input required name="id" placeholder="ID" type="text">
-    <button  id="submit-btn">add userName & ID</button>
-  </form>
-  <button id="btn">show UserName & ID</button>
-  <div class="output"></div>
+  <div class="container">
+    <div class="header">
+      <h1><i class="fas fa-users"></i> User Management System</h1>
+      <p>Create, view, and manage your users with ease</p>
+    </div>
+    
+    <div class="main-content">
+      <!-- Form Section -->
+      <div class="form-section">
+        <h2><i class="fas fa-user-plus"></i> Create New User</h2>
+        <form class="form">
+          <div class="form-group">
+            <label for="name">Full Name</label>
+            <input 
+              required 
+              name="name" 
+              id="name"
+              placeholder="Enter user's full name" 
+              type="text"
+            >
+          </div>
+          <div class="form-group">
+            <label for="id">User ID</label>
+            <input 
+              required 
+              name="id" 
+              id="id"
+              placeholder="Enter unique user ID" 
+              type="text"
+            >
+          </div>
+          <button type="submit" id="submit-btn" class="btn">
+            <i class="fas fa-plus"></i> Add User
+          </button>
+        </form>
+      </div>
+
+      <!-- Users Section -->
+      <div class="users-section">
+        <h2><i class="fas fa-list"></i> User List</h2>
+        <div class="users-controls">
+          <button id="btn" class="btn btn-secondary">
+            <i class="fas fa-sync-alt"></i> Refresh Users
+          </button>
+          <button id="clear-btn" class="btn btn-secondary">
+            <i class="fas fa-trash"></i> Clear List
+          </button>
+          <a href="users.html" class="btn btn-secondary">
+            <i class="fas fa-external-link-alt"></i> View All Users
+          </a>
+        </div>
+        <div class="output">
+          <div class="empty-state">
+            <i class="fas fa-users"></i>
+            <p>No users found. Create your first user to get started!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <script src="main.js"></script>
 </body>
 </html>

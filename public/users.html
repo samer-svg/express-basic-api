@@ -3,9 +3,58 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Users</title>
+  <title>Users List - User Management System</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="users.css">
 </head>
 <body>
-  <h1>welcome to the users page</h1>
+  <div class="container">
+    <div class="header">
+      <h1><i class="fas fa-users"></i> Users Directory</h1>
+      <p>View and manage all registered users</p>
+    </div>
+    
+    <div class="nav-bar">
+      <div class="nav-links">
+        <a href="index.html" class="nav-link">
+          <i class="fas fa-home"></i> Home
+        </a>
+        <a href="users.html" class="nav-link active">
+          <i class="fas fa-list"></i> Users
+        </a>
+      </div>
+      <div class="controls">
+        <button id="refresh-btn" class="btn btn-secondary">
+          <i class="fas fa-sync-alt"></i> Refresh
+        </button>
+        <a href="index.html" class="btn btn-success">
+          <i class="fas fa-plus"></i> Add New User
+        </a>
+      </div>
+    </div>
+    
+    <div class="main-content">
+      <div class="page-header">
+        <h2 class="page-title">
+          <i class="fas fa-list"></i> All Users
+        </h2>
+        <div class="stats" id="stats">
+          <div class="stat-card">
+            <div class="stat-number" id="total-users">0</div>
+            <div class="stat-label">Total Users</div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="users-grid" id="users-grid">
+        <div class="loading">
+          <i class="fas fa-spinner"></i>
+          <p>Loading users...</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="users.js"></script>
 </body>
 </html>
