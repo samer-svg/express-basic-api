@@ -1,3 +1,9 @@
+// API Configuration
+const API_BASE_URL = window.location.hostname === 'localhost' 
+  ? 'http://localhost:3000' 
+  : window.location.origin;
+
+// DOM Elements
 const btn = document.getElementById('btn');
 const output = document.querySelector('.output');
 const btnPost = document.getElementById('submit-btn');
@@ -61,7 +67,7 @@ function createUserCard(user) {
 async function showUsers() {
   try {
     showLoading();
-    const res = await fetch('http://localhost:3000/api/users');
+    const res = await fetch(`${API_BASE_URL}/api/users`);
     
     if (!res.ok) {
       throw new Error('Failed to fetch users');
@@ -107,7 +113,7 @@ async function createUser(e) {
     btnPost.disabled = true;
     btnPost.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Creating...';
     
-    const res = await fetch('http://localhost:3000/api/users', {
+    const res = await fetch(`${API_BASE_URL}/api/users`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -142,7 +148,7 @@ async function deleteUser(userId) {
   }
   
   try {
-    const res = await fetch(`http://localhost:3000/api/users/${userId}`, {
+    const res = await fetch(`${API_BASE_URL}/api/users/${userId}`, {
       method: 'DELETE'
     });
     
@@ -167,7 +173,7 @@ async function editUser(userId) {
   }
   
   try {
-    const res = await fetch(`http://localhost:3000/api/users/${userId}`, {
+    const res = await fetch(`${API_BASE_URL}/api/users/${userId}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json'
@@ -210,7 +216,7 @@ async function addSampleData() {
   
   for (const user of sampleUsers) {
     try {
-      await fetch('http://localhost:3000/api/users', {
+      await fetch(`${API_BASE_URL}/api/users`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

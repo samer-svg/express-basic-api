@@ -1,3 +1,8 @@
+// API Configuration
+const API_BASE_URL = window.location.hostname === 'localhost' 
+  ? 'http://localhost:3000' 
+  : window.location.origin;
+
 // DOM Elements
 const usersGrid = document.getElementById('users-grid');
 const refreshBtn = document.getElementById('refresh-btn');
@@ -52,7 +57,7 @@ function createUserCard(user) {
 async function loadUsers() {
   try {
     showLoading();
-    const res = await fetch('http://localhost:3000/api/users');
+    const res = await fetch(`${API_BASE_URL}/api/users`);
     
     if (!res.ok) {
       throw new Error('Failed to fetch users');
@@ -93,7 +98,7 @@ async function deleteUser(userId) {
   }
   
   try {
-    const res = await fetch(`http://localhost:3000/api/users/${userId}`, {
+    const res = await fetch(`${API_BASE_URL}/api/users/${userId}`, {
       method: 'DELETE'
     });
     
@@ -138,7 +143,7 @@ async function editUser(userId) {
   }
   
   try {
-    const res = await fetch(`http://localhost:3000/api/users/${userId}`, {
+    const res = await fetch(`${API_BASE_URL}/api/users/${userId}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json'
