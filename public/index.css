@@ -8,15 +8,24 @@ body {
   font-family: 'Inter', sans-serif;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   min-height: 100vh;
-  padding: 20px;
+  padding: 10px;
   color: #333;
 }
 
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
 .container {
+  width: 100%;
   max-width: 1200px;
   margin: 0 auto;
   background: rgba(255, 255, 255, 0.95);
-  border-radius: 20px;
+  border-radius: 15px;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   backdrop-filter: blur(10px);
@@ -25,40 +34,40 @@ body {
 .header {
   background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
   color: white;
-  padding: 40px;
+  padding: 25px 20px;
   text-align: center;
 }
 
 .header h1 {
-  font-size: 2.5rem;
+  font-size: 1.8rem;
   font-weight: 700;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 }
 
 .header p {
-  font-size: 1.1rem;
+  font-size: 1rem;
   opacity: 0.9;
   font-weight: 300;
 }
 
 .main-content {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 40px;
-  padding: 40px;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  padding: 20px;
 }
 
 .form-section {
   background: #f8fafc;
-  padding: 30px;
+  padding: 20px;
   border-radius: 15px;
   border: 1px solid #e2e8f0;
 }
 
 .form-section h2 {
   color: #1e293b;
-  font-size: 1.5rem;
-  margin-bottom: 25px;
+  font-size: 1.3rem;
+  margin-bottom: 20px;
   display: flex;
   align-items: center;
   gap: 10px;
@@ -82,10 +91,10 @@ body {
 
 .form-group input {
   width: 100%;
-  padding: 12px 16px;
+  padding: 10px 12px;
   border: 2px solid #e5e7eb;
   border-radius: 10px;
-  font-size: 1rem;
+  font-size: 0.9rem;
   transition: all 0.3s ease;
   background: white;
 }
@@ -104,9 +113,9 @@ body {
   background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
   color: white;
   border: none;
-  padding: 12px 24px;
+  padding: 10px 16px;
   border-radius: 10px;
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-weight: 500;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -134,15 +143,15 @@ body {
 
 .users-section {
   background: #f8fafc;
-  padding: 30px;
+  padding: 20px;
   border-radius: 15px;
   border: 1px solid #e2e8f0;
 }
 
 .users-section h2 {
   color: #1e293b;
-  font-size: 1.5rem;
-  margin-bottom: 25px;
+  font-size: 1.3rem;
+  margin-bottom: 20px;
   display: flex;
   align-items: center;
   gap: 10px;
@@ -155,28 +164,28 @@ body {
 .users-controls {
   margin-bottom: 20px;
   display: flex;
-  gap: 15px;
-  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .output {
-  max-height: 400px;
+  max-height: 300px;
   overflow-y: auto;
   background: white;
   border-radius: 10px;
   border: 1px solid #e5e7eb;
-  padding: 20px;
+  padding: 15px;
 }
 
 .user-card {
   background: white;
   border: 1px solid #e5e7eb;
   border-radius: 10px;
-  padding: 15px;
-  margin-bottom: 10px;
+  padding: 12px;
+  margin-bottom: 8px;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
+  gap: 10px;
   transition: all 0.3s ease;
 }
 
@@ -207,16 +216,18 @@ body {
 .user-actions {
   display: flex;
   gap: 8px;
+  justify-content: center;
 }
 
 .action-btn {
   background: none;
   border: none;
-  padding: 6px;
+  padding: 8px;
   border-radius: 6px;
   cursor: pointer;
   transition: all 0.3s ease;
   color: #6b7280;
+  font-size: 0.8rem;
 }
 
 .action-btn:hover {
@@ -280,18 +291,92 @@ body {
   border: 1px solid #fca5a5;
 }
 
-@media (max-width: 768px) {
-  .main-content {
-    grid-template-columns: 1fr;
-    gap: 20px;
+/* Tablet and larger screens */
+@media (min-width: 768px) {
+  body {
     padding: 20px;
   }
   
+  .center {
+    margin-top: 50px;
+  }
+  
+  .container {
+    border-radius: 20px;
+  }
+  
   .header {
-    padding: 30px 20px;
+    padding: 40px;
   }
   
   .header h1 {
-    font-size: 2rem;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+  }
+  
+  .header p {
+    font-size: 1.1rem;
+  }
+  
+  .main-content {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    padding: 40px;
+  }
+  
+  .form-section,
+  .users-section {
+    padding: 30px;
+  }
+  
+  .form-section h2,
+  .users-section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 25px;
+  }
+  
+  .form-group input {
+    padding: 12px 16px;
+    font-size: 1rem;
+  }
+  
+  .btn {
+    padding: 12px 24px;
+    font-size: 1rem;
+  }
+  
+  .users-controls {
+    flex-direction: row;
+    gap: 15px;
+    flex-wrap: wrap;
+  }
+  
+  .output {
+    max-height: 400px;
+    padding: 20px;
+  }
+  
+  .user-card {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    margin-bottom: 10px;
+  }
+  
+  .user-actions {
+    justify-content: flex-end;
+  }
+  
+  .action-btn {
+    padding: 6px;
+    font-size: 1rem;
+  }
+}
+
+/* Large desktop screens */
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1200px;
   }
 }
