@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+  <style>
+    .active {
+      background : red;
+    }
+    .text {
+      text-align:center;
+      color:red
+    }
+  </style>
+</head>
+<body>
+  <h1>welcome to the home page</h1>
+  <form class="form">
+    <label>create user name</label>
+    <input required name="name" placeHolder="Name" type="text">
+    <label>create user ID</label>
+    <input required name="id" placeholder="ID" type="text">
+    <button  id="submit-btn">add userName & ID</button>
+  </form>
+  <button id="btn">show UserName & ID</button>
+  <div class="output"></div>
+  <script src="main.js"></script>
+</body>
+</html>
